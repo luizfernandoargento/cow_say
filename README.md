@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Execute o server
+$ rails server
 
-Things you may want to cover:
+Abra outro terminal e digite
 
-* Ruby version
+$ curl localhost:3000/say -H 'Content-Type: application/json' -d '{"message": "Hello from RapidAPI"}'
+| ruby -r json -e "print JSON.parse(STDIN.read)['message']"
 
-* System dependencies
+Aqui estamos canalizando a saída do nosso comando curl para o ruby, onde exigimos o módulo json e o usamos para analisar a resposta, pegar a propriedade e imprimi-la, o que garante que a resposta seja apresentada corretamente. Agora você deve ver uma vaca dizendo sua frase:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+"Hello from RapidAPI"
